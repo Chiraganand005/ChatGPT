@@ -18,6 +18,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/conversations', conversationRoutes);
 
 // Health check
+app.get('/', (req, res) => {
+  res.send('AssistAI Backend is running');
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'NamasteAI Backend is running' });
 });
