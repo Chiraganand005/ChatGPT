@@ -29,7 +29,7 @@ const Main = () => {
                         style={{ cursor: 'pointer', width: '24px', marginRight: '10px' }}
                     />
                 )}
-                <p>NamasteAI</p>
+                <p>AssistAI</p>
                 <img src={assets.user_icon} alt="" />
             </div>
             <div className="main-container">
@@ -53,8 +53,8 @@ const Main = () => {
                                 <p>Brainstorm team bonding activities for our work retreat</p>
                                 <img src={assets.message_icon} alt="" />
                             </div>
-                            <div className="card" onClick={() => onSent("Improve the readability of the following code")}>
-                                <p>Improve the readability of the following code</p>
+                            <div className="card" onClick={() => onSent("What is Quantum Computing")}>
+                                <p>What is Quantum Computing</p>
                                 <img src={assets.code_icon} alt="" />
                             </div>
                         </div>
@@ -139,7 +139,7 @@ const Main = () => {
                         </div>
                     </div>
                     <p className="bottom-info">
-                        NamasteAI may display inaccurate info including about people so double check its responses.
+                        AssistAI may display inaccurate or incorrect info  about people so double check its responses.
                     </p>
                 </div>
             </div>

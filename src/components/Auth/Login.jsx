@@ -15,7 +15,7 @@ const Login = ({ onSwitchToRegister }) => {
     setLoading(true);
 
     const result = await login(email, password);
-    
+
     if (!result.success) {
       setError(result.message);
       setLoading(false);
@@ -25,11 +25,11 @@ const Login = ({ onSwitchToRegister }) => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h2>NamasteAI</h2>
+        <h2>AssistAI</h2>
         <p className="auth-subtitle">Login to continue</p>
-        
+
         {error && <div className="auth-error">{error}</div>}
-        
+
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="auth-input-group">
             <label>Email</label>
@@ -41,7 +41,7 @@ const Login = ({ onSwitchToRegister }) => {
               placeholder="Enter your email"
             />
           </div>
-          
+
           <div className="auth-input-group">
             <label>Password</label>
             <input
@@ -52,12 +52,12 @@ const Login = ({ onSwitchToRegister }) => {
               placeholder="Enter your password"
             />
           </div>
-          
+
           <button type="submit" className="auth-button" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
-        
+
         <p className="auth-switch">
           Don't have an account?{' '}
           <span onClick={onSwitchToRegister} className="auth-link">

@@ -27,7 +27,7 @@ const Register = ({ onSwitchToLogin }) => {
 
     setLoading(true);
     const result = await register(name, email, password);
-    
+
     if (!result.success) {
       setError(result.message);
       setLoading(false);
@@ -37,11 +37,11 @@ const Register = ({ onSwitchToLogin }) => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h2>NamasteAI</h2>
+        <h2>AssistAI</h2>
         <p className="auth-subtitle">Create your account</p>
-        
+
         {error && <div className="auth-error">{error}</div>}
-        
+
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="auth-input-group">
             <label>Name</label>
@@ -53,7 +53,7 @@ const Register = ({ onSwitchToLogin }) => {
               placeholder="Enter your name"
             />
           </div>
-          
+
           <div className="auth-input-group">
             <label>Email</label>
             <input
@@ -64,7 +64,7 @@ const Register = ({ onSwitchToLogin }) => {
               placeholder="Enter your email"
             />
           </div>
-          
+
           <div className="auth-input-group">
             <label>Password</label>
             <input
@@ -75,7 +75,7 @@ const Register = ({ onSwitchToLogin }) => {
               placeholder="Enter your password (min 6 characters)"
             />
           </div>
-          
+
           <div className="auth-input-group">
             <label>Confirm Password</label>
             <input
@@ -86,12 +86,12 @@ const Register = ({ onSwitchToLogin }) => {
               placeholder="Confirm your password"
             />
           </div>
-          
+
           <button type="submit" className="auth-button" disabled={loading}>
             {loading ? 'Creating account...' : 'Register'}
           </button>
         </form>
-        
+
         <p className="auth-switch">
           Already have an account?{' '}
           <span onClick={onSwitchToLogin} className="auth-link">
