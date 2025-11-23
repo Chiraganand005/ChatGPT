@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* CSS Variables for Light Theme */
+:root {
+  --bg-primary: #f0f4f9;
+  --bg-secondary: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --card-bg: #f0f4f9;
+  --input-bg: #ffffff;
+  --markdown-text: #1a1a1a;
+  --markdown-heading: #000000;
+  --markdown-strong: #000000;
+}
+
+/* CSS Variables for Dark Theme */
+[data-theme='dark'] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --border-color: #404040;
+  --card-bg: #252526;
+  --input-bg: #1a1a1a;
+  --markdown-text: #c4c7c5;
+  --markdown-heading: #ffffff;
+  --markdown-strong: #ffffff;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+#root{
+  min-height: 100vh;
+  display: flex;
+  animation: fadeIn 1.5s;
+  background: var(--bg-primary);
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

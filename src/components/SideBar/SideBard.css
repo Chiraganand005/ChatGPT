@@ -1,0 +1,336 @@
+.sidebar {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-secondary, #f0f4f9);
+    padding: 25px 15px;
+    color: var(--text-primary, #282828);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    transition: transform 0.3s ease, width 0.3s ease;
+    transform: translateX(0);
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed .new-chat {
+    padding: 10px;
+    justify-content: center;
+}
+
+.sidebar.collapsed .recent-entry {
+    justify-content: center;
+    padding-right: 10px;
+}
+
+.sidebar img {
+    width: 20px;
+}
+
+.sidebar .menu {
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar .new-chat {
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: var(--card-bg, #e6eaf1);
+    border-radius: 50px;
+    font-size: 14px;
+    color: var(--text-secondary, grey);
+    cursor: pointer;
+}
+
+.sidebar .recent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar .recent-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 50px;
+    color: var(--text-primary, #282828);
+    cursor: pointer;
+}
+
+.sidebar .recent-entry:hover {
+    background-color: var(--card-bg, #e2e6eb);
+}
+
+.sidebar .bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .bottom-item {
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+/* Settings Modal */
+.settings-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.settings-modal {
+    background: var(--bg-secondary, #ffffff);
+    border-radius: 16px;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border-color, #e0e0e0);
+}
+
+.settings-header h3 {
+    margin: 0;
+    color: var(--text-primary, #333);
+    font-size: 24px;
+}
+
+.settings-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--text-secondary, #666);
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.settings-close:hover {
+    background: var(--card-bg, #f0f0f0);
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.settings-section h4 {
+    margin: 0;
+    color: var(--text-primary, #333);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.settings-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.settings-user-info p {
+    margin: 0;
+    color: var(--text-secondary, #666);
+    font-size: 14px;
+}
+
+.settings-user-info strong {
+    color: var(--text-primary, #333);
+}
+
+.settings-theme-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: var(--card-bg, #f0f0f0);
+    border-radius: 8px;
+}
+
+.settings-theme-toggle span {
+    color: var(--text-primary, #333);
+    font-size: 14px;
+}
+
+/* Theme Toggle Switch */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.theme-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.theme-switch input:checked+.theme-slider {
+    background-color: #4b90ff;
+}
+
+.theme-switch input:checked+.theme-slider:before {
+    transform: translateX(26px);
+}
+
+.settings-logout {
+    padding: 12px 24px;
+    background: linear-gradient(16deg, #ff5546, #ff3333);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 8px;
+}
+
+.settings-logout:hover {
+    opacity: 0.9;
+}
+
+/* Hide scrollbar but keep functionality */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--border-color, #ccc);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary, #999);
+}
+
+.sidebar .recent::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar .recent::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar .recent::-webkit-scrollbar-thumb {
+    background: var(--border-color, #ccc);
+    border-radius: 2px;
+}
+
+@media (max-width:768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width:600px) {
+    .sidebar {
+        display: none;
+    }
+
+    .settings-modal {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+/* Dark mode support for icons */
+[data-theme='dark'] .sidebar img {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+[data-theme='dark'] .sidebar .menu {
+    filter: invert(1);
+}
+
+[data-theme='dark'] .recent-entry:hover {
+    background-color: #333;
+}
