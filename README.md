@@ -1,6 +1,6 @@
 # 🤖 Assist AI - Full Stack MERN Application
 
-NamasteAI is a full-stack MERN (MongoDB, Express, React, Node.js) application that replicates the functionality of Google Gemini, integrating with the Google Gemini API. It offers an intuitive, conversational interface with authentication, theme switching, and conversation history.
+Assist AI is a full-stack MERN (MongoDB, Express, React, Node.js) application that replicates the functionality of Google Gemini, integrating with the Google Gemini API. It offers an intuitive, conversational interface with authentication, theme switching, and conversation history.
 
 ## ⚙️ Tech Stack
 
@@ -100,7 +100,7 @@ NamasteAI is a full-stack MERN (MongoDB, Express, React, Node.js) application th
 ## 📁 Project Structure
 
 ```
-NamasteAI/
+AssistAI/
 ├── server/                 # Backend
 │   ├── controllers/       # Route controllers
 │   ├── models/            # MongoDB models
@@ -153,9 +153,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 🔗 Links
 
-- Live Demo: [Coming Soon]
+- Live Demo: https:assistai.onrender.com
 - Documentation: [Coming Soon]
 
 ---
 
-Made with ❤️ using MERN Stack
+Made with ❤️ by Chirag Anand  using MERN Stack
